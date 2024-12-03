@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="flex justify-between items-center bg-primary-bis rounded-full text-white m-8 py-4">
-      <div class="flex items-center">
+      <div class="flex items-center grow">
         <div class="flex items-center">
           <NuxtImg
             src="pfp.jpeg"
@@ -11,10 +11,10 @@
           />
           <div>
             <h1 class="font-merriweather text-xl mb-1">
-              I'm SSebigo
+              {{ $t('ssebigo.iAm') }} SSebigo
             </h1>
             <p class="text-sm w-64">
-              Full-stack developer & art enjoyer from Montpellier, France.
+              {{ $t('ssebigo.description') }}
             </p>
           </div>
         </div>
@@ -23,24 +23,24 @@
             <tr>
               <td class="px-5 py-2">
                 <NuxtLink :to="routes().servicesRoute">
-                  Services
+                  {{ $t('services') }}
                 </NuxtLink>
               </td>
               <td class="px-5 py-2">
                 <NuxtLink :to="routes().devRoute">
-                  Dev projects
+                  {{ $t('devProjects') }}
                 </NuxtLink>
               </td>
             </tr>
             <tr>
               <td class="px-5 py-2">
                 <NuxtLink :to="routes().experiencesRoute">
-                  Work experience
+                  {{ $t('workExperiences') }}
                 </NuxtLink>
               </td>
               <td class="px-5 py-2">
                 <NuxtLink :to="routes().artRoute">
-                  Art gallery
+                  {{ $t('artGallery') }}
                 </NuxtLink>
               </td>
             </tr>
@@ -48,18 +48,56 @@
               <td class="px-5 py-2" />
               <td class="px-5 py-2">
                 <NuxtLink :to="routes().aboutRoute">
-                  About me
+                  {{ $t('aboutMe') }}
                 </NuxtLink>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div class="flex items-center">
+        <a
+          href="https://www.linkedin.com/in/françois-grèzes"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2"
+        >
+          <Icon
+            name="mdi:linkedin"
+            size="30"
+            class="mx-2"
+          />
+        </a>
+        <a
+          href="https://https://github.com/SSebigo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2"
+        >
+          <Icon
+            name="mdi:github"
+            size="30"
+            class="mx-2"
+          />
+        </a>
+        <a
+          href="https://bsky.app/profile/ssebigo.bsky.social"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2"
+        >
+          <Icon
+            name="ri:bluesky-fill"
+            size="30"
+            class="mx-2"
+          />
+        </a>
+      </div>
       <NuxtLink
         :to="routes().contactRoute"
         class="context-button"
       >
-        Contact me
+        {{ $t('contactMe') }}
       </NuxtLink>
     </div>
   </section>
@@ -73,8 +111,11 @@ import routes from '~/utils/routes'
 .context-button {
   @apply
   bg-background
+  border
+  border-primary-bis
   hover:bg-primary
   hover:border
+  hover:border-background
   px-4
   py-2
   rounded-full

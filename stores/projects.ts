@@ -5,8 +5,9 @@ const allProjects: { [key: string]: IProject } = {
   ahhhhhh: Project.create({
     uid: crypto.randomUUID(),
     name: 'Ahhhhhh',
-    shortDescription: 'An app that screams and moans',
-    description: ['Ahhhhhh is an app that screams and moans.'],
+    shortDescription: 'ahhhhhh.shortDescription',
+    description: 'ahhhhhh.description',
+    projectLogo: 'AhhhhhhLogo.png',
     languages: ['Dart'],
     frameworks: ['Flutter'],
     dbs: ['Firebase'],
@@ -18,14 +19,26 @@ const allProjects: { [key: string]: IProject } = {
   forktale: Project.create({
     uid: crypto.randomUUID(),
     name: 'Forktale',
-    shortDescription: 'A collaborative story writing app',
-    description: ['Forktale is a collaborative story writing app.'],
+    shortDescription: 'forktale.shortDescription',
+    description: 'forktale.description',
     languages: ['Dart'],
     frameworks: ['Flutter'],
     dbs: ['Firebase'],
     tools: ['VS Code'],
     gallery: ['https://via.placeholder.com/150'],
     githubLink: 'https://github.com/KillyIO/wine',
+  }),
+  luminagpt: Project.create({
+    uid: crypto.randomUUID(),
+    name: 'LuminaGPT',
+    shortDescription: 'luminagpt.shortDescription',
+    description: 'luminagpt.description',
+    languages: ['Dart'],
+    frameworks: ['Flutter'],
+    dbs: ['Firebase'],
+    tools: ['VS Code'],
+    gallery: ['https://via.placeholder.com/150'],
+    githubLink: 'https://github.com/SSebigo/LuminaGPT',
   }),
 }
 
@@ -36,7 +49,11 @@ export const useProjectsStore = defineStore('projectsStore', () => {
     projects.value = Object.values(allProjects)
   }
 
-  const selectedProjects = computed(() => [allProjects['ahhhhhh']])
+  const selectedProjects = computed(() => [
+    allProjects['ahhhhhh'],
+    allProjects['forktale'],
+    allProjects['luminagpt'],
+  ])
 
   return {
     projects,

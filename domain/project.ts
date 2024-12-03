@@ -4,7 +4,8 @@ const ProjectSchema = z.object({
   uid: z.string(),
   name: z.string(),
   shortDescription: z.string(),
-  description: z.array(z.string()),
+  description: z.string(),
+  projectLogo: z.string().optional(),
   languages: z.array(z.string()),
   frameworks: z.array(z.string()),
   dbs: z.array(z.string()),
@@ -20,7 +21,8 @@ class Project implements IProject {
   uid: string
   name: string
   shortDescription: string
-  description: string[]
+  description: string
+  projectLogo?: string
   languages: string[]
   frameworks: string[]
   dbs: string[]
@@ -34,6 +36,7 @@ class Project implements IProject {
     this.name = data.name
     this.shortDescription = data.shortDescription
     this.description = data.description
+    this.projectLogo = data.projectLogo
     this.languages = data.languages
     this.frameworks = data.frameworks
     this.dbs = data.dbs

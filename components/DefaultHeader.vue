@@ -8,39 +8,56 @@
       </li>
       <li>
         <NuxtLink :to="routes().servicesRoute">
-          Services
+          {{ $t('services') }}
         </NuxtLink>
       </li>
       <li>
         <NuxtLink :to="routes().experiencesRoute">
-          Work experience
+          {{ $t('workExperiences') }}
         </NuxtLink>
       </li>
       <li>
         <NuxtLink :to="routes().devRoute">
-          Dev projects
+          {{ $t('devProjects') }}
         </NuxtLink>
       </li>
       <li>
         <NuxtLink :to="routes().artRoute">
-          Art gallery
+          {{ $t('artGallery') }}
         </NuxtLink>
       </li>
       <li>
         <NuxtLink :to="routes().aboutRoute">
-          About me
+          {{ $t('aboutMe') }}
         </NuxtLink>
       </li>
     </ul>
-    <NuxtLink
-      :to="routes().contactRoute"
-      class="border border-secondary-bis px-4 py-1 rounded-full text-sm"
-    >
-      Contact me
-    </NuxtLink>
+    <div class="flex items-center">
+      <NuxtLink
+        :to="routes().contactRoute"
+        class="border border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-1 rounded-full text-sm mr-5"
+      >
+        {{ $t('contactMe') }}
+      </NuxtLink>
+      <Icon
+        name="twemoji:flag-france"
+        size="24"
+      />
+      <Switch
+        :checked="locale === 'en-US'"
+        class="mx-2"
+        @update:checked="setLocale(locale === 'en-US' ? 'fr-FR' : 'en-US')"
+      />
+      <Icon
+        name="twemoji:flag-united-kingdom"
+        size="24"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import routes from '~/utils/routes'
+
+const { locale, setLocale } = useI18n()
 </script>

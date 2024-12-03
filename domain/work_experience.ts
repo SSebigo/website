@@ -5,14 +5,15 @@ const WorkExperienceSchema = z.object({
   position: z.string(),
   companyName: z.string(),
   companyLogo: z.string(),
-  description: z.array(z.string()),
+  description: z.string(),
   startDate: z.string(),
   endDate: z.string(),
   languages: z.array(z.string()),
   frameworks: z.array(z.string()),
   dbs: z.array(z.string()),
   tools: z.array(z.string()),
-  link: z.string(),
+  companyLink: z.string(),
+  projectLink: z.string().optional(),
 })
 
 type IWorkExperience = z.infer<typeof WorkExperienceSchema>
@@ -22,14 +23,15 @@ class WorkExperience implements IWorkExperience {
   position: string
   companyName: string
   companyLogo: string
-  description: string[]
+  description: string
   startDate: string
   endDate: string
   languages: string[]
   frameworks: string[]
   dbs: string[]
   tools: string[]
-  link: string
+  companyLink: string
+  projectLink?: string
 
   constructor(data: IWorkExperience) {
     this.uid = data.uid
@@ -43,7 +45,8 @@ class WorkExperience implements IWorkExperience {
     this.frameworks = data.frameworks
     this.dbs = data.dbs
     this.tools = data.tools
-    this.link = data.link
+    this.companyLink = data.companyLink
+    this.projectLink = data.projectLink
   }
 
   static create = (data: IWorkExperience) => {

@@ -1,5 +1,12 @@
 <template>
   <div class="w-full flex flex-col items-center pt-32">
+    <Head>
+      <Title>{{ $t('seo.home.title') }}</Title>
+      <Meta
+        name="description"
+        content="{{ $t('seo.home.description') }}"
+      />
+    </Head>
     <div class="w-2/3 grid grid-cols-2 gap-20">
       <div>
         <NuxtImg
@@ -10,24 +17,24 @@
         />
         <div class="font-merriweather my-5">
           <h1 class="text-4xl mb-2">
-            I'm SSebigo
+            {{ $t('ssebigo.iAm') }} SSebigo
           </h1>
           <p class="text-lg">
-            Full-stack developer & art enjoyer from Montpellier, France.
+            {{ $t('ssebigo.description') }}
           </p>
         </div>
       </div>
       <div>
         <div class="mb-10">
           <h1 class="text-5xl font-merriweather">
-            Tailor-made experiences for the digital era
+            {{ $t('catchPhrase') }}
           </h1>
           <div class="flex py-10">
             <NuxtLink
               :to="routes().contactRoute"
               class="border border-secondary-bis px-4 py-2 rounded-full text-sm"
             >
-              Contact me
+              {{ $t('contactMe') }}
             </NuxtLink>
           </div>
         </div>
@@ -35,7 +42,7 @@
         <!-- Work experiences -->
         <div class="mb-10">
           <h2 class="font-merriweather my-3 text-lg">
-            Work experiences
+            {{ $t('workExperiences') }}
           </h2>
           <ul>
             <li
@@ -43,36 +50,21 @@
               :key="experience.uid"
               class="my-2"
             >
-              <button
-                class="w-full flex justify-between items-center rounded-full border p-5"
-                @click="toggleWorkExperienceDialog(true, experience)"
-              >
-                <div class="flex">
-                  <NuxtImg
-                    :src="experience.companyLogo"
-                    class="w-14 rounded-full mr-5"
-                  />
-                  <div class="text-start">
-                    <p class="font-light">
-                      {{ experience.position }}
-                    </p>
-                    <p class="font-semibold">
-                      {{ experience.companyName }}
-                    </p>
-                  </div>
-                </div>
-                <p class="text-sm text-gray-500">
-                  {{ experience.startDate }} - {{ experience.endDate }}
-                </p>
-              </button>
+              <WorkExperienceTile
+                :work-experience="experience"
+                @toggle="(
+                  value: boolean,
+                  workExperience: IWorkExperience,
+                ) => toggleWorkExperienceDialog(value, workExperience)"
+              />
             </li>
           </ul>
         </div>
-        <div class="w-full h-0.5 bg-secondary rounded-full mx-2" />
+        <div class="w-full h-0.5 bg-secondary rounded-full mx-1" />
         <!-- Selected projects -->
         <div class="mb-10">
-          <h2 class="font-merriweather">
-            Selected projects
+          <h2 class="font-merriweather my-3 text-lg">
+            {{ $t('selectedProjects') }}
           </h2>
           <ul>
             <li
@@ -80,10 +72,43 @@
               :key="project.uid"
               class="my-2"
             >
-              <button class="w-full flex justify-between items-center rounded-full border p-5">
-                <p>{{ project.name }}</p>
-                <p>{{ project.description }}</p>
-              </button>
+              <ProjectTile
+                :project="project"
+                @toggle="(
+                  value: boolean,
+                  project: IProject,
+                ) => toggleProjectDialog(value, project)"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="w-full h-0.5 bg-secondary rounded-full mx-1" />
+        <!-- What I do -->
+        <div class="mb-10">
+          <h2 class="font-merriweather my-3 text-lg">
+            {{ $t('whatIDo') }}
+          </h2>
+          <ul>
+            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+              <WhatIDoTile
+                title="whatIDo1.title"
+                description="whatIDo1.shortDescription"
+                icon="mdi:apps"
+              />
+            </li>
+            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+              <WhatIDoTile
+                title="whatIDo2.title"
+                description="whatIDo2.shortDescription"
+                icon="mdi:world-wide-web"
+              />
+            </li>
+            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+              <WhatIDoTile
+                title="whatIDo3.title"
+                description="whatIDo3.shortDescription"
+                icon="mdi:art"
+              />
             </li>
           </ul>
         </div>
@@ -93,48 +118,57 @@
       :open="isWorkExperienceDialogOpen"
       @update:open="(value: boolean) => toggleWorkExperienceDialog(value)"
     >
-      <DialogContent>
+      <DialogContent class="max-w-xl">
         <DialogHeader>
           <div class="flex justify-between items-center">
-            <div class="flex">
+            <div class="flex items-center">
               <NuxtImg
                 :src="activeWorkExperience?.companyLogo"
-                class="w-14 rounded-full mr-5"
+                class="w-14 h-14 rounded-full mr-5"
               />
               <div>
                 <p class="font-light">
-                  {{ activeWorkExperience?.position }}
+                  {{ $t(activeWorkExperience?.position) }}
                 </p>
-                <p class="font-semibold">
-                  {{ activeWorkExperience?.companyName }}
-                </p>
+                <div class="flex item-center">
+                  <p class="font-semibold">
+                    {{ activeWorkExperience?.companyName }}
+                  </p>
+                  <a
+                    v-if="activeWorkExperience?.companyLink"
+                    :href="activeWorkExperience?.companyLink"
+                    target="_blank"
+                    class="mx-1"
+                  >
+                    <Icon
+                      name="mdi:external-link"
+                      class="mt-1"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
             <div>
               <p class="text-sm text-gray-500">
-                {{ activeWorkExperience?.startDate }} - {{ activeWorkExperience?.endDate }}
+                {{ $t(activeWorkExperience?.startDate) }} - {{ $t(activeWorkExperience?.endDate) }}
               </p>
             </div>
           </div>
         </DialogHeader>
         <div class="mx-2 my-5">
           <ul>
-            <li
-              v-for="task in activeWorkExperience?.description"
-              :key="task"
-              class="mb-1"
-            >
-              <p>{{ task }}</p>
+            <li class="mb-1 whitespace-pre-line">
+              <p>{{ $t(activeWorkExperience?.description) }}</p>
             </li>
           </ul>
           <hr class="my-5">
           <a
-            v-if="activeWorkExperience?.link"
-            :href="activeWorkExperience?.link"
+            v-if="activeWorkExperience?.projectLink"
+            :href="activeWorkExperience?.projectLink"
             target="_blank"
             class="text-sm underline"
           >
-            Learn more
+            {{ $t('seeMore') }}
           </a>
         </div>
         <DialogFooter>
@@ -185,16 +219,102 @@
         </DialogFooter>
       </DialogContent>
     </Dialog>
+    <Dialog
+      :open="isProjectDialogOpen"
+      @update:open="(value: boolean) => toggleProjectDialog(value)"
+    >
+      <DialogContent class="max-w-xl">
+        <DialogHeader>
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <NuxtImg
+                :src="activeProject?.projectLogo ?? 'https://placehold.co/200'"
+                class="w-14 h-14 rounded-full mr-5"
+              />
+              <p class="font-semibold text-lg">
+                {{ activeProject?.name }}
+              </p>
+            </div>
+            <a
+              :href="activeProject?.githubLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon
+                name="mdi:external-link"
+                size="24"
+                class="mx-4 mt-1"
+              />
+            </a>
+          </div>
+        </DialogHeader>
+        <div class="mx-2">
+          <p class="whitespace-pre-line">
+            {{ $t(activeProject?.description) }}
+          </p>
+          <hr class="my-5">
+        </div>
+        <DialogFooter>
+          <div class="w-full">
+            <ul class="flex flex-wrap justify-start">
+              <li
+                v-for="lang in activeProject?.languages"
+                :key="lang"
+                class="m-1"
+              >
+                <TagChip
+                  :text="lang"
+                  color="bg-languages"
+                />
+              </li>
+              <li
+                v-for="framework in activeProject?.frameworks"
+                :key="framework"
+                class="m-1"
+              >
+                <TagChip
+                  :text="framework"
+                  color="bg-frameworks text-white"
+                />
+              </li>
+              <li
+                v-for="db in activeProject?.dbs"
+                :key="db"
+                class="m-1"
+              >
+                <TagChip
+                  :text="db"
+                  color="bg-dbs"
+                />
+              </li>
+              <li
+                v-for="tool in activeProject?.tools"
+                :key="tool"
+                class="m-1"
+              >
+                <TagChip
+                  :text="tool"
+                  color="bg-tools text-white"
+                />
+              </li>
+            </ul>
+          </div>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   </div>
 </template>
 
 <script lang="ts" setup>
+import type { IProject } from '~/domain/project'
 import type { IWorkExperience } from '~/domain/work_experience'
 import routes from '~/utils/routes'
 
 const isWorkExperienceDialogOpen = ref(false)
+const isProjectDialogOpen = ref(false)
 
 const activeWorkExperience = ref<IWorkExperience | undefined>(undefined)
+const activeProject = ref<IProject | undefined>(undefined)
 
 const toggleWorkExperienceDialog = (value: boolean, workExperience?: IWorkExperience) => {
   if (workExperience) {
@@ -202,6 +322,14 @@ const toggleWorkExperienceDialog = (value: boolean, workExperience?: IWorkExperi
   }
 
   isWorkExperienceDialogOpen.value = value
+}
+
+const toggleProjectDialog = (value: boolean, project?: IProject) => {
+  if (project) {
+    activeProject.value = project
+  }
+
+  isProjectDialogOpen.value = value
 }
 
 const workExperiencesStore = useWorkExperiencesStore()
