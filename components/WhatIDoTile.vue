@@ -1,5 +1,5 @@
 <template>
-  <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background-bis border p-3">
+  <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border p-3">
     <Icon
       :name="icon"
       size="24"

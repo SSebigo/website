@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center py-32">
+  <div class="w-full flex justify-center py-12 xl:py-20 2xl:py-32">
     <Head>
       <Title>{{ $t('seo.services.title') }}</Title>
       <Meta
@@ -7,10 +7,10 @@
         content="{{ $t('seo.services.description') }}"
       />
     </Head>
-    <ul class="grid grid-cols-2 gap-5 w-2/3">
+    <ul class="grid grid-cols-1 mx-10 lg:mx-10 lg:grid-cols-2 gap-5 xl:w-5/6 2xl:w-3/4">
       <li class="border rounded-xl p-5">
         <div class="flex items-center">
-          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background-bis border">
+          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
               name="mdi:apps"
               size="24"
@@ -24,11 +24,11 @@
           {{ $t('whatIDo1.description') }}
         </p>
       </li>
-      <li />
-      <li />
+      <li class="hidden lg:block" />
+      <li class="hidden lg:block" />
       <li class="border rounded-xl p-5">
         <div class="flex items-center">
-          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background-bis border">
+          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
               name="mdi:world-wide-web"
               size="24"
@@ -44,7 +44,7 @@
       </li>
       <li class="border rounded-xl p-5">
         <div class="flex items-center">
-          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background-bis border">
+          <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
               name="mdi:art"
               size="24"
@@ -58,7 +58,7 @@
           {{ $t('whatIDo3.description') }}
         </p>
       </li>
-      <li />
+      <li class="hidden lg:block" />
     </ul>
   </div>
 </template>

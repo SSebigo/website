@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex justify-center py-20">
+  <div class="w-full flex justify-center py-12 xl:py-20 2x:py-32">
     <Head>
       <Title>{{ $t('seo.experiences.title') }}</Title>
       <Meta
@@ -7,13 +7,16 @@
         content="{{ $t('seo.experiences.description') }}"
       />
     </Head>
-    <ul class="w-2/3">
+    <ul class="mx-10 xl:mx-0 xl:w-5/6 2xl:w-3/4">
       <li
         v-for="(experience, idx) in workExperiencesStore.workExperiences"
         :key="experience.uid"
-        class="grid grid-cols-2 gap-5"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-5 my-5"
       >
-        <div v-if="idx % 2 === 1" />
+        <div
+          v-if="idx % 2 === 1"
+          class="hidden lg:block"
+        />
         <div class="rounded-xl border p-5">
           <!-- Header -->
           <div class="flex justify-between items-center">
@@ -114,7 +117,10 @@
             </ul>
           </div>
         </div>
-        <div v-if="idx % 2 === 0" />
+        <div
+          v-if="idx % 2 === 0"
+          class="hidden lg:block"
+        />
       </li>
     </ul>
   </div>

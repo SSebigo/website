@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col items-center pt-32">
+  <div class="w-full lg:flex lg:flex-col lg:items-center pt-20 lg:pt-32">
     <Head>
       <Title>{{ $t('seo.home.title') }}</Title>
       <Meta
@@ -7,32 +7,32 @@
         content="{{ $t('seo.home.description') }}"
       />
     </Head>
-    <div class="w-2/3 grid grid-cols-2 gap-20">
-      <div>
+    <div class="mx-10 xl:w-2/3 grid lg:grid-cols-2 gap-10 xl:gap-20">
+      <div class="flex flex-col items-center text-center lg:block lg:text-start">
         <NuxtImg
           src="pfp.jpeg"
           alt=""
           width="150"
-          class="rounded-lg mb-5"
+          class="rounded-lg mb-2 lg:mb-5"
         />
         <div class="font-merriweather my-5">
-          <h1 class="text-4xl mb-2">
+          <h1 class="text-2xl lg:text-4xl mb-2">
             {{ $t('ssebigo.iAm') }} SSebigo
           </h1>
-          <p class="text-lg">
+          <p class="text-base lg:text-lg">
             {{ $t('ssebigo.description') }}
           </p>
         </div>
       </div>
       <div>
-        <div class="mb-10">
-          <h1 class="text-5xl font-merriweather">
+        <div class="mb-5 lg:mb-10">
+          <h1 class="text-center text-3xl lg:text-start lg:text-4xl xl:text-5xl font-merriweather">
             {{ $t('catchPhrase') }}
           </h1>
-          <div class="flex py-10">
+          <div class="w-full flex flex-cols justify-center lg:block py-5 lg:py-10">
             <NuxtLink
               :to="routes().contactRoute"
-              class="border border-secondary-bis px-4 py-2 rounded-full text-sm"
+              class="border bg-background border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-2 rounded-full text-sm"
             >
               {{ $t('contactMe') }}
             </NuxtLink>
@@ -223,7 +223,7 @@
       :open="isProjectDialogOpen"
       @update:open="(value: boolean) => toggleProjectDialog(value)"
     >
-      <DialogContent class="max-w-xl">
+      <DialogContent class="max-w-md xl:max-w-xl">
         <DialogHeader>
           <div class="flex justify-between items-center">
             <div class="flex items-center">
@@ -248,8 +248,8 @@
             </a>
           </div>
         </DialogHeader>
-        <div class="mx-2">
-          <p class="whitespace-pre-line">
+        <div class="xl:mx-2 max-h-72 xl:max-h-full">
+          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-full xl:overflow-auto">
             {{ $t(activeProject?.description) }}
           </p>
           <hr class="my-5">
