@@ -5,7 +5,6 @@ module.exports = {
   darkMode: ['class'],
   safelist: ['dark'],
   prefix: '',
-
   theme: {
     container: {
       center: true,
@@ -90,6 +89,10 @@ module.exports = {
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
         noto: ['Noto Sans', 'sans-serif'],
+      },
+      maxHeight: {
+        112: '28rem',
+        128: '32rem',
       },
     },
   },

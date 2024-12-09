@@ -3,51 +3,51 @@
     <div class="hidden lg:flex lg:justify-between lg:items-center lg:px-10 xl:px-20 2xl:px-28 py-4">
       <ul class="flex items-center space-x-7 xl:space-x-10 text-sm">
         <li class="font-roboto font-normal text-lg mr-2 xl:mr-5">
-          <NuxtLink :to="routes().homeRoute">
+          <NuxtLinkLocale :to="routes().homeRoute">
             SSebigo
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
         <li>
-          <NuxtLink :to="routes().servicesRoute">
+          <NuxtLinkLocale :to="routes().servicesRoute">
             {{ $t('services') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
         <li>
-          <NuxtLink :to="routes().experiencesRoute">
+          <NuxtLinkLocale :to="routes().experiencesRoute">
             {{ $t('workExperiences') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
         <li>
-          <NuxtLink :to="routes().devRoute">
+          <NuxtLinkLocale :to="routes().devRoute">
             {{ $t('devProjects') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
         <li>
-          <NuxtLink :to="routes().artRoute">
+          <NuxtLinkLocale :to="routes().artRoute">
             {{ $t('artGallery') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
         <li>
-          <NuxtLink :to="routes().aboutRoute">
+          <NuxtLinkLocale :to="routes().aboutRoute">
             {{ $t('aboutMe') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </li>
       </ul>
       <div class="flex items-center">
-        <NuxtLink
+        <NuxtLinkLocale
           :to="routes().contactRoute"
           class="border bg-background border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-1 rounded-full text-sm mr-5"
         >
           {{ $t('contactMe') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
         <Icon
           name="twemoji:flag-france"
           size="24"
         />
         <Switch
-          :checked="locale === 'en-US'"
+          :checked="locale === 'en'"
           class="mx-2"
-          @update:checked="setLocale(locale === 'en-US' ? 'fr-FR' : 'en-US')"
+          @update:checked="setLocale(locale === 'en' ? 'fr' : 'en')"
         />
         <Icon
           name="twemoji:flag-united-kingdom"
@@ -73,46 +73,46 @@
           <DrawerHeader>
             <DrawerTitle>
               <h1 class="font-roboto font-normal text-xl">
-                <NuxtLink :to="routes().homeRoute">
+                <NuxtLinkLocale :to="routes().homeRoute">
                   SSebigo
-                </NuxtLink>
+                </NuxtLinkLocale>
               </h1>
             </DrawerTitle>
             <DrawerDescription />
           </DrawerHeader>
           <ul class="mx-5">
             <li class="my-5">
-              <NuxtLink :to="routes().servicesRoute">
+              <NuxtLinkLocale :to="routes().servicesRoute">
                 {{ $t('services') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="my-5">
-              <NuxtLink :to="routes().experiencesRoute">
+              <NuxtLinkLocale :to="routes().experiencesRoute">
                 {{ $t('workExperiences') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="my-5">
-              <NuxtLink :to="routes().devRoute">
+              <NuxtLinkLocale :to="routes().devRoute">
                 {{ $t('devProjects') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="my-5">
-              <NuxtLink :to="routes().artRoute">
+              <NuxtLinkLocale :to="routes().artRoute">
                 {{ $t('artGallery') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="my-5">
-              <NuxtLink :to="routes().aboutRoute">
+              <NuxtLinkLocale :to="routes().aboutRoute">
                 {{ $t('aboutMe') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="my-5">
-              <NuxtLink
+              <NuxtLinkLocale
                 :to="routes().contactRoute"
                 class="border bg-background border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-1 rounded-full text-sm mr-5"
               >
                 {{ $t('contactMe') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </li>
             <li class="flex items-center my-5">
               <Icon
@@ -120,9 +120,9 @@
                 size="24"
               />
               <Switch
-                :checked="locale === 'en-US'"
+                :checked="locale === 'en'"
                 class="mx-2"
-                @update:checked="setLocale(locale === 'en-US' ? 'fr-FR' : 'en-US')"
+                @update:checked="setLocale(locale === 'en' ? 'fr' : 'en')"
               />
               <Icon
                 name="twemoji:flag-united-kingdom"
@@ -163,6 +163,7 @@ import {
   DrawerFooter,
   DrawerClose,
 } from '~/components/ui/drawer'
+import { Switch } from '~/components/ui/switch'
 
 const { locale, setLocale } = useI18n()
 </script>

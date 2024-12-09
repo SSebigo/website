@@ -4,7 +4,7 @@
       <Title>{{ $t('seo.about.title') }}</Title>
       <Meta
         name="description"
-        content="{{ $t('seo.about.description') }}"
+        :content="$t('seo.about.description')"
       />
     </Head>
     <div class="mx-10 xl:w-2/3 grid lg:grid-cols-2 lg:justify-items-center">

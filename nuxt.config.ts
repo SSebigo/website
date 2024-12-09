@@ -25,10 +25,50 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: './i18n.config.ts',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en-US.ts' },
+      { code: 'fr', language: 'fr-FR', file: 'fr-FR.ts' },
+    ],
+    lazy: true,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
+    customRoutes: 'config',
+    pages: {
+      home: {
+        en: '/',
+        fr: '/',
+      },
+      services: {
+        en: '/services',
+        fr: '/services',
+      },
+      experiences: {
+        en: '/work-experiences',
+        fr: '/experiences-professionnelles',
+      },
+      dev: {
+        en: '/dev-projects',
+        fr: '/projets-dev',
+      },
+      art: {
+        en: '/art-gallery',
+        fr: '/galerie-art',
+      },
+      about: {
+        en: '/about',
+        fr: '/a-propos',
+      },
+      contact: {
+        en: '/contact-me',
+        fr: '/contactez-moi',
+      },
+    },
+  },
+  shadcn: {
+    prefix: '',
+    componentDir: './components/ui',
   },
 })

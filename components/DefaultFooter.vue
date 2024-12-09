@@ -69,7 +69,7 @@
           />
         </a>
         <a
-          href="https://https://github.com/SSebigo"
+          href="https://github.com/SSebigo"
           target="_blank"
           rel="noopener noreferrer"
           class="mt-2"

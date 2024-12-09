@@ -4,10 +4,10 @@
       <Title>{{ $t('seo.home.title') }}</Title>
       <Meta
         name="description"
-        content="{{ $t('seo.home.description') }}"
+        :content="$t('seo.home.description')"
       />
     </Head>
-    <div class="mx-10 xl:w-2/3 grid lg:grid-cols-2 gap-10 xl:gap-20">
+    <div class="mx-3 md:mx-10 xl:w-3/4 2xl:w-2/3 grid lg:grid-cols-2 gap-10 xl:gap-20">
       <div class="flex flex-col items-center text-center lg:block lg:text-start">
         <NuxtImg
           src="pfp.jpeg"
@@ -118,7 +118,7 @@
       :open="isWorkExperienceDialogOpen"
       @update:open="(value: boolean) => toggleWorkExperienceDialog(value)"
     >
-      <DialogContent class="max-w-xl">
+      <DialogContent class="max-w-md xl:max-w-xl">
         <DialogHeader>
           <div class="flex justify-between items-center">
             <div class="flex items-center">
@@ -155,12 +155,10 @@
             </div>
           </div>
         </DialogHeader>
-        <div class="mx-2 my-5">
-          <ul>
-            <li class="mb-1 whitespace-pre-line">
-              <p>{{ $t(activeWorkExperience?.description) }}</p>
-            </li>
-          </ul>
+        <div class="xl:mx-2 max-h-72 xl:max-h-128">
+          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
+            {{ $t(activeWorkExperience?.description) }}
+          </p>
           <hr class="my-5">
           <a
             v-if="activeWorkExperience?.projectLink"
@@ -248,7 +246,7 @@
             </a>
           </div>
         </DialogHeader>
-        <div class="xl:mx-2 max-h-72 xl:max-h-full">
+        <div class="xl:mx-2 max-h-72 xl:max-h-128">
           <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-full xl:overflow-auto">
             {{ $t(activeProject?.description) }}
           </p>

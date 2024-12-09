@@ -4,7 +4,7 @@
       <Title>{{ $t('seo.services.title') }}</Title>
       <Meta
         name="description"
-        content="{{ $t('seo.services.description') }}"
+        :content="$t('seo.services.description')"
       />
     </Head>
     <ul class="grid grid-cols-1 mx-10 lg:mx-10 lg:grid-cols-2 gap-5 xl:w-5/6 2xl:w-3/4">
@@ -23,6 +23,23 @@
         <p class="my-2 whitespace-pre-line">
           {{ $t('whatIDo1.description') }}
         </p>
+        <Accordion
+          type="single"
+          collapsible
+        >
+          <AccordionItem value="app-dev-item-1">
+            <AccordionTrigger>{{ $t('alreadyDesign') }}</AccordionTrigger>
+            <AccordionContent>
+              {{ $t('whatIDo1.alreadyDesign') }}
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="app-dev-item-2">
+            <AccordionTrigger>{{ $t('noDesign') }}</AccordionTrigger>
+            <AccordionContent>
+              {{ $t('whatIDo1.noDesign') }}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </li>
       <li class="hidden lg:block" />
       <li class="hidden lg:block" />
@@ -41,6 +58,23 @@
         <p class="mt-5 whitespace-pre-line">
           {{ $t('whatIDo2.description') }}
         </p>
+        <Accordion
+          type="single"
+          collapsible
+        >
+          <AccordionItem value="showcase-dev-item-1">
+            <AccordionTrigger>{{ $t('alreadyDesign') }}</AccordionTrigger>
+            <AccordionContent>
+              {{ $t('whatIDo2.alreadyDesign') }}
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="showcase-dev-item-2">
+            <AccordionTrigger>{{ $t('noDesign') }}</AccordionTrigger>
+            <AccordionContent>
+              {{ $t('whatIDo2.noDesign') }}
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </li>
       <li class="border rounded-xl p-5">
         <div class="flex items-center">
@@ -64,6 +98,7 @@
 </template>
 
 <script lang="ts" setup>
+import { Accordion, AccordionItem } from '~/components/ui/accordion'
 </script>
 
 <style>

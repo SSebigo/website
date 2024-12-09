@@ -25,13 +25,15 @@
     "shadcn-nuxt": "0.10.4",
     "tailwind-merge": "2.5.5",
     "tailwindcss-animate": "1.0.7",
-    "vaul-vue": "^0.2.0",
+    "vaul-vue": "0.2.0",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "3.23.8"
   },
   "devDependencies": {
     "@iconify-json/mdi": "1.2.1",
+    "@iconify-json/ri": "1.2.3",
+    "@iconify-json/twemoji": "1.2.1",
     "@nuxtjs/tailwindcss": "6.12.2",
     "pinia": "2.1.7"
   }

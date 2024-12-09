@@ -4,7 +4,7 @@
       <Title>{{ $t('seo.experiences.title') }}</Title>
       <Meta
         name="description"
-        content="{{ $t('seo.experiences.description') }}"
+        :content="$t('seo.experiences.description')"
       />
     </Head>
     <ul class="mx-10 xl:mx-0 xl:w-5/6 2xl:w-3/4">
@@ -57,7 +57,7 @@
           <!-- Description -->
           <div class="mx-2 my-5">
             <ul>
-              <li class="mb-1">
+              <li class="whitespace-pre-line">
                 <p>{{ $t(experience?.description) }}</p>
               </li>
             </ul>
