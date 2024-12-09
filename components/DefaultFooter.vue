@@ -21,34 +21,34 @@
         <tbody>
           <tr>
             <td class="px-5 py-2">
-              <NuxtLink :to="routes().servicesRoute">
+              <NuxtLinkLocale :to="routes().servicesRoute">
                 {{ $t('services') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </td>
             <td class="px-5 py-2">
-              <NuxtLink :to="routes().devRoute">
+              <NuxtLinkLocale :to="routes().devRoute">
                 {{ $t('devProjects') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </td>
           </tr>
           <tr>
             <td class="px-5 py-2">
-              <NuxtLink :to="routes().experiencesRoute">
+              <NuxtLinkLocale :to="routes().experiencesRoute">
                 {{ $t('workExperiences') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </td>
             <td class="px-5 py-2">
-              <NuxtLink :to="routes().artRoute">
+              <NuxtLinkLocale :to="routes().artRoute">
                 {{ $t('artGallery') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </td>
           </tr>
           <tr>
             <td class="px-5 py-2" />
             <td class="px-5 py-2">
-              <NuxtLink :to="routes().aboutRoute">
+              <NuxtLinkLocale :to="routes().aboutRoute">
                 {{ $t('aboutMe') }}
-              </NuxtLink>
+              </NuxtLinkLocale>
             </td>
           </tr>
         </tbody>
@@ -94,12 +94,12 @@
         </a>
       </div>
       <div>
-        <NuxtLink
+        <NuxtLinkLocale
           :to="routes().contactRoute"
           class="bg-background text-primary border border-primary-bis hover:bg-primary-bis hover:border-background hover:text-white rounded-full px-4 py-2 mx-10"
         >
           {{ $t('contactMe') }}
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </div>
   </div>

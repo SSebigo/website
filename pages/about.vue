@@ -27,12 +27,12 @@
           </p>
         </div>
         <div class="mt-10">
-          <NuxtLink
+          <NuxtLinkLocale
             :to="routes().contactRoute"
             class="bg-background border border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-2 rounded-full text-sm"
           >
             {{ $t('contactMe') }}
-          </NuxtLink>
+          </NuxtLinkLocale>
         </div>
       </div>
     </div>

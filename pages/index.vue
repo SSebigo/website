@@ -30,12 +30,12 @@
             {{ $t('catchPhrase') }}
           </h1>
           <div class="w-full flex flex-cols justify-center lg:block py-5 lg:py-10">
-            <NuxtLink
+            <NuxtLinkLocale
               :to="routes().contactRoute"
               class="border bg-background border-secondary-bis hover:bg-primary-bis hover:text-white px-4 py-2 rounded-full text-sm"
             >
               {{ $t('contactMe') }}
-            </NuxtLink>
+            </NuxtLinkLocale>
           </div>
         </div>
         <div class="w-full h-0.5 bg-secondary rounded-full mx-1" />
@@ -247,7 +247,7 @@
           </div>
         </DialogHeader>
         <div class="xl:mx-2 max-h-72 xl:max-h-128">
-          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-full xl:overflow-auto">
+          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
             {{ $t(activeProject?.description) }}
           </p>
           <hr class="my-5">
@@ -306,6 +306,7 @@
 <script lang="ts" setup>
 import type { IProject } from '~/domain/project'
 import type { IWorkExperience } from '~/domain/work_experience'
+import { Dialog, DialogContent, DialogHeader } from '~/components/ui/dialog'
 import routes from '~/utils/routes'
 
 const isWorkExperienceDialogOpen = ref(false)

@@ -14,40 +14,77 @@ export default {
     description: 'Full-stack developer & artist in Montpellier, France.',
   },
   selectedProjects: 'Selected projects',
-  seeMore: 'See more',
+  seeMore: 'View the project',
   laForge: {
     position: 'Freelance lead developer',
-    description: '',
+    description: `
+        For LaForge Powerlifting in Montpellier, I worked with the co-founder in the creation of a coaching platform that would allow the gym's coaches and their athletes to have a more advanced coaching solution than simple Excel sheets. \n
+        The platform is divided into two parts: a web application for coaches offering them an ergonomic solution to create and manage their athletes' programs, but also their coaching packages and subscriptions. The second part is a mobile application for athletes, offering them an ergonomic interface to carry out their sessions and follow the progress of their programs, but also to manage their subscriptions. \n
+        As lead dev on this project, the first step of this project was to study the different technologies available. Thus, I created a few mockups in Flutter, Svelte (SvelteKit) and Vue (Nuxt). In terms of performance, Flutter was clearly the winner for mobile applications, but for web applications, the performance left something to be desired. I chose Vue for the web application because the technology is more mature than Svelte and allows me to do some things that, unfortunately, are not available with Svelte or too unstable. \n
+        Working on this project only part-time (two days a week), we launched a closed beta to a few LaForge coaches and athletes in September. The feedback is numerous and the development of the platform has resumed in full swing thanks in particular to the numerous feedbacks of features that the coaches (more than athletes) would like to see implemented.
+    `,
     startDate: 'March 2024',
     endDate: 'Now',
   },
   evarisk: {
     position: 'Fullstack developer',
-    description: '',
+    description: `
+        For Evarisk, I joined a team of three developers in the development of modules for Dolibarr. \n
+        As a PHP developer on this project, I participated in the development of the DigiRisk module for corporate risk management, DigiQuali for quality control management, DoliMeet for training management and DoliSIRH for human resources management. \n
+        This experience was an opportunity for me to try my hand at PHP, which is a language that I have always struggled with, not in terms of difficulty, but in terms of syntax. \n
+        I thank the Evarisk team, but also Eoxia, for their welcome and wish them a future full of success.
+    `,
     startDate: 'May 2024',
     endDate: 'August 2024',
   },
   yumi: {
     position: 'Freelance Flutter developer',
-    description: '',
+    description: `
+        For Yumi, I had the chance to be a consultant on improving the performance of a Flutter application. \n
+        As part of the development of their social network Yumi Club, Yumi developers chose Flutter as their front-end technology. Being a first for them, I was consulted to resolve performance issues in the display of certain data, particularly in lists. \n
+        This experience was my first experience as a freelance developer, with Go, as a consultant and also as a remote complement. \n
+        I thank the Yumi team for trusting me and wish them continued success in their projects.
+    `,
     startDate: 'February 2024',
     endDate: 'March 2024',
   },
   exatech: {
     position: 'Flutter developer',
-    description: '',
+    description: `
+        For Exatech, I joined the company as a Flutter developer. In fact, I joined the company because they were looking for someone with experience in Flutter, because this technology was new to the internal teams, and it turns out that at that time I had almost two years of personal projects behind me. \n
+        Exatech is a company in the educational sector that develops solutions for administering, managing and correcting exams. During my time at Exatech, I worked on a new solution that aimed to be able to administer, manage and correct exams in a single platform. \n
+        So, at first, I had almost free rein to take the existing code base and modify it as I saw fit, to end up with something more solid to continue developing the application. \n
+        The first year was a bit chaotic, because we had to fight almost constantly with the fact that the web version of Flutter was still in alpha at the time and that many features were unstable or simply non-existent. \n
+        Once the stable version of Flutter web was available, things were much simpler and the development of the platform accelerated, because most of our problems had been solved just like that. \n
+        I have very good memories of Exatech and I thank the team for trusting my judgment, especially in a phase as complicated as starting a project. The app was released a little after I left Exatech and seems to be quite successful. Congratulations to all.
+    `,
     startDate: 'February 2021',
     endDate: 'May 2023',
   },
   airddm: {
     position: 'Frontend developer',
-    description: '',
+    description: `
+        For AIRDDM, I joined the development team in Montpellier as part of my end-of-year internship at Epitech. \n
+        AIRDDM is a company that develops and maintains digital platforms on behalf of third parties. During my time there, I worked on a site belonging to Bosch. \n
+        My experience at AIRDDM took place in two stages. \n
+        First, I was assigned to redesign the statistics pages on behalf of Bosch. Indeed, the site in its original version took up to ten minutes to display a few graphs. My task was therefore to rewrite these pages with Vue, to take advantage of its asynchronicity. \n
+        The second part of this experience was a little shorter than the first and also more theoretical. Indeed, I had to explore several models to integrate a chatbot into the Bosch site. The only criterion was that it be open source. Thus, my attention was focused on a chatbot developed by SNCF whose code was up to date, but not the documentation. So I took the last month at AIRDDM to update the chatbot documentation and make a proof of concept integration. \n
+        This experience was my first experience as a pure front-end developer (although I was able to work from time to time on the back-end side to help colleagues). \n
+        I thank the AIRDDM team for having confidence in my decisions and I wish them good luck.
+    `,
     startDate: 'November 2019',
     endDate: 'September 2020',
   },
   witco: {
     position: 'Backend developer',
-    description: '',
+    description: `
+        For Witco, which at the time this experience took place was called MonBuilding, I joined the company as part of my third-year internship at Epitech. \n
+        At the time, Witco was a company that developed a platform that allowed all the stakeholders in a building to be connected. \n
+        This experience is directly related to my learning of web technologies, particularly Node.js. I was lucky enough to be able to work as a fullstack developer, although the front end of what I was asked to do was only used by members of the company. \n
+        My tasks during this experience consisted of developing the company's back office. Thus, I developed various interfaces for interacting with databases (creation, deletion, modification), but also the development of interfaces for monitoring the activity of these databases. \n
+        This experience was a first for me, because it was the first time I ventured out of Montpellier to go to Paris. \n
+        I thank the Witco team for welcoming me and supporting me in learning the different web tools that partly make me the developer I am today.
+    `,
     startDate: 'April 2018',
     endDate: 'July 2018',
   },
@@ -148,4 +185,11 @@ export default {
         The project is no longer in active development and there's very little chance of me returning to it.
     `,
   },
+  professionalEnquiries: 'For all professional enquiries',
+  otherEnquiries: 'For all other enquiries',
+  emailEnquiries: 'Email',
+  emailEnquiriesDescription: 'Professional enquiries by email.',
+  emailAddress: 'Sender\'s e-mail address',
+  object: 'Object',
+  message: 'Message',
 }

@@ -19,3 +19,8 @@ publish = "dist"
 #  publish = "dist" # Folder with the static content for _redirect file
 
 ## more info on configuring this file: https://ntl.fyi/file-based-build-config
+[build.environment]
+NETLIFY_IMAGE_CDN = "true"
+
+[images]
+remote_images = ["https://cdn.bsky.app/img/.*"]

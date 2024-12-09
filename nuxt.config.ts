@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@nuxt/icon',
     '@nuxtjs/i18n',
+    'nuxt-mail',
   ],
   devtools: { enabled: true },
   app: {
@@ -64,6 +65,22 @@ export default defineNuxtConfig({
       contact: {
         en: '/contact-me',
         fr: '/contactez-moi',
+      },
+    },
+  },
+  image: {
+    provider: 'netlify',
+    domains: ['cdn.bsky.app'],
+  },
+  mail: {
+    message: {
+      to: process.env.SMTP_GMAIL_USER,
+    },
+    smtp: {
+      service: 'gmail',
+      auth: {
+        user: process.env.SMTP_GMAIL_USER,
+        pass: process.env.SMTP_GMAIL_PASSWORD,
       },
     },
   },
