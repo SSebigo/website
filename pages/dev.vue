@@ -7,7 +7,7 @@
         :content="$t('seo.projects.description')"
       />
     </Head>
-    <ul class="mx-10 xl:mx-0 xl:w-5/6 2xl:w-3/4">
+    <ul class="mx-2 sm:mx-10 xl:mx-0 xl:w-5/6 2xl:w-3/4">
       <li
         v-for="(project, idx) in projectsStore.projects"
         :key="project.uid"
@@ -17,7 +17,7 @@
           v-if="idx % 2 === 1"
           class="hidden lg:block"
         />
-        <div class="rounded-xl border p-5">
+        <div class="rounded-xl border px-2 py-3 sm:p-5">
           <!-- Header -->
           <div class="flex justify-between items-center">
             <div class="flex items-center">

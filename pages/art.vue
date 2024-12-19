@@ -11,13 +11,13 @@
       <h1 class="font-merriweather font-normal text-3xl mb-10">
         {{ $t('artGallery') }}
       </h1>
-      <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-5 mx-10 mt-10">
+      <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-5 mx-3 sm:mx-10 mt-10 space-y-3 sm:space-y-5">
         <NuxtImg
           v-for="(art, idx) in artStore.gallery"
           :key="art.uid"
           :src="art.url"
           :alt="art.alt"
-          class="rounded-lg cursor-pointer"
+          class="w-full rounded-lg cursor-pointer"
           @click="toggleArtDialog(true, art, idx)"
         />
       </div>
@@ -26,7 +26,7 @@
       :open="isArtDialogOpen"
       @update:open="(value: boolean) => toggleArtDialog(value)"
     >
-      <DialogContent>
+      <DialogContent class="max-w-80 rounded-lg p-2 sm:max-w-sm sm:p-6 xl:max-w-md">
         <DialogHeader class="text-xl font-semibold font-merriweather mx-2">
           <DialogTitle>
             #{{ activeArtIdx + 1 }}

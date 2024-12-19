@@ -13,9 +13,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
   compatibilityDate: '2024-11-01',
@@ -77,7 +75,8 @@ export default defineNuxtConfig({
       to: process.env.SMTP_GMAIL_USER,
     },
     smtp: {
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
       auth: {
         user: process.env.SMTP_GMAIL_USER,
         pass: process.env.SMTP_GMAIL_PASSWORD,

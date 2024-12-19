@@ -7,9 +7,9 @@
         :content="$t('seo.services.description')"
       />
     </Head>
-    <ul class="grid grid-cols-1 mx-10 lg:mx-10 lg:grid-cols-2 gap-5 xl:w-5/6 2xl:w-3/4">
-      <li class="border rounded-xl p-5">
-        <div class="flex items-center">
+    <ul class="grid grid-cols-1 mx-2 sm:mx-10 lg:mx-10 lg:grid-cols-2 gap-5 xl:w-5/6 2xl:w-3/4">
+      <li class="border rounded-xl p-3 sm:p-5">
+        <div class="w-full flex items-center">
           <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
               name="mdi:apps"
@@ -43,7 +43,7 @@
       </li>
       <li class="hidden lg:block" />
       <li class="hidden lg:block" />
-      <li class="border rounded-xl p-5">
+      <li class="border rounded-xl p-3 sm:p-5">
         <div class="flex items-center">
           <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
@@ -55,7 +55,7 @@
             {{ $t('whatIDo2.title') }}
           </h2>
         </div>
-        <p class="mt-5 whitespace-pre-line">
+        <p class="my-2 whitespace-pre-line">
           {{ $t('whatIDo2.description') }}
         </p>
         <Accordion
@@ -76,7 +76,7 @@
           </AccordionItem>
         </Accordion>
       </li>
-      <li class="border rounded-xl p-5">
+      <li class="border rounded-xl p-3 sm:p-5">
         <div class="flex items-center">
           <div class="w-12 h-12 flex justify-center items-center rounded-full bg-background border">
             <Icon
@@ -88,7 +88,7 @@
             {{ $t('whatIDo3.title') }}
           </h2>
         </div>
-        <p class="mt-5 whitespace-pre-line">
+        <p class="mt-2 sm:mt-5 whitespace-pre-line">
           {{ $t('whatIDo3.description') }}
         </p>
       </li>

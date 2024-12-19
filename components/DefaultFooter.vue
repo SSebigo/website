@@ -1,5 +1,5 @@
 <template>
-  <div class="grid xl:flex xl:justify-between xl:items-center bg-primary-bis rounded-xl xl:rounded-full text-white m-4 xl:m-8 py-4">
+  <div class="grid xl:flex xl:justify-between xl:items-center bg-primary-bis rounded-xl xl:rounded-full text-white m-1 sm:m-4 xl:m-8 py-4">
     <div class="grid grid-cols-1 justify-items-center xl:flex xl:items-center xl:justify-start">
       <div class="grid grid-cols-1 justify-items-center xl:flex xl:items-center my-5 xl:m-0">
         <NuxtImg
@@ -54,7 +54,7 @@
         </tbody>
       </table>
     </div>
-    <div class="w-full xl:w-auto flex justify-around items-center">
+    <div class="w-full grid grid-cols-1 justify-items-center xl:w-auto xl:flex xl:justify-around xl:items-center">
       <div class="flex items-center">
         <a
           href="https://www.linkedin.com/in/françois-grèzes"
@@ -93,7 +93,7 @@
           />
         </a>
       </div>
-      <div>
+      <div class="mt-8 mb-2 xl:m-0">
         <NuxtLinkLocale
           :to="routes().contactRoute"
           class="bg-background text-primary border border-primary-bis hover:bg-primary-bis hover:border-background hover:text-white rounded-full px-4 py-2 mx-10"

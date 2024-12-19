@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full flex justify-center py-12 xl:py-20 2xl:py-32">
+  <div class="w-full flex justify-center px-3 py-12 xl:py-20 2xl:py-32">
     <div>
       <div>
-        <h1 class="font-merriweather text-xl">
+        <h1 class="font-merriweather text-xl text-center sm:text-start">
           {{ $t('professionalEnquiries') }}:
         </h1>
         <ul class="my-8">
@@ -34,7 +34,7 @@
                   /> Email
                 </button>
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent class="rounded-lg max-w-80 sm:max-w-sm md:max-w-md">
                 <DialogHeader>
                   <DialogTitle>
                     {{ $t('emailEnquiries') }}
@@ -76,6 +76,7 @@
                   </DialogClose>
                   <Button
                     type="submit"
+                    class="mb-2 sm:mb-0"
                     @click="sendMail"
                   >
                     <Icon name="mdi:send" /> Send
@@ -87,7 +88,7 @@
         </ul>
       </div>
       <div>
-        <h1 class="font-merriweather text-xl">
+        <h1 class="font-merriweather text-xl text-center sm:text-start">
           {{ $t('otherEnquiries') }}:
         </h1>
         <ul class="my-8">
@@ -143,7 +144,7 @@ const sendMail = () => {
   mail.send({
     from: emailFrom.value,
     subject: emailSubject.value,
-    text: emailContent.value,
+    text: `${emailFrom.value}\n${emailContent.value}`,
   })
 
   emailFrom.value = ''

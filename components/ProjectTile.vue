@@ -1,6 +1,6 @@
 <template>
   <button
-    class="w-full flex justify-between items-center rounded-full border p-5"
+    class="w-full flex justify-between items-center rounded-xl sm:rounded-full border p-3 sm:p-5"
     @click="emit('toggle', true, project)"
   >
     <div class="flex items-center">
@@ -21,6 +21,7 @@
       :href="project.githubLink"
       target="_blank"
       rel="noopener noreferrer"
+      class="hidden sm:block"
     >
       <Icon
         name="mdi:external-link"

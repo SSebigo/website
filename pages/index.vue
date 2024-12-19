@@ -89,21 +89,21 @@
             {{ $t('whatIDo') }}
           </h2>
           <ul>
-            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+            <li class="w-full sm:flex sm:items-center rounded-xl border p-2 sm:p-5 my-2">
               <WhatIDoTile
                 title="whatIDo1.title"
                 description="whatIDo1.shortDescription"
                 icon="mdi:apps"
               />
             </li>
-            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+            <li class="w-full sm:flex sm:items-center rounded-xl border p-2 sm:p-5 my-2">
               <WhatIDoTile
                 title="whatIDo2.title"
                 description="whatIDo2.shortDescription"
                 icon="mdi:world-wide-web"
               />
             </li>
-            <li class="w-full flex items-center rounded-xl border p-5 my-2">
+            <li class="w-full sm:flex sm:items-center rounded-xl border p-2 sm:p-5 my-2">
               <WhatIDoTile
                 title="whatIDo3.title"
                 description="whatIDo3.shortDescription"
@@ -118,7 +118,7 @@
       :open="isWorkExperienceDialogOpen"
       @update:open="(value: boolean) => toggleWorkExperienceDialog(value)"
     >
-      <DialogContent class="max-w-md xl:max-w-xl">
+      <DialogContent class="rounded-lg max-w-80 sm:max-w-md xl:max-w-xl p-2 sm:p-6">
         <DialogHeader>
           <div class="flex justify-between items-center">
             <div class="flex items-center">
@@ -148,15 +148,15 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="hidden sm:block">
               <p class="text-sm text-gray-500">
                 {{ $t(activeWorkExperience?.startDate) }} - {{ $t(activeWorkExperience?.endDate) }}
               </p>
             </div>
           </div>
         </DialogHeader>
-        <div class="xl:mx-2 max-h-72 xl:max-h-128">
-          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
+        <div class="xl:mx-2">
+          <p class="whitespace-pre-line max-h-80 sm:max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
             {{ $t(activeWorkExperience?.description) }}
           </p>
           <hr class="my-5">
@@ -221,7 +221,7 @@
       :open="isProjectDialogOpen"
       @update:open="(value: boolean) => toggleProjectDialog(value)"
     >
-      <DialogContent class="max-w-md xl:max-w-xl">
+      <DialogContent class="rounded-lg max-w-80 sm:max-w-md xl:max-w-xl">
         <DialogHeader>
           <div class="flex justify-between items-center">
             <div class="flex items-center">
@@ -246,8 +246,8 @@
             </a>
           </div>
         </DialogHeader>
-        <div class="xl:mx-2 max-h-72 xl:max-h-128">
-          <p class="whitespace-pre-line max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
+        <div class="xl:mx-2">
+          <p class="whitespace-pre-line max-h-80 sm:max-h-64 overflow-y-scroll xl:max-h-112 xl:overflow-auto">
             {{ $t(activeProject?.description) }}
           </p>
           <hr class="my-5">
