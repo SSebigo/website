@@ -16,7 +16,7 @@ export default {
   selectedProjects: 'Projets sélectionnés',
   seeMore: 'Voir le projet',
   laForge: {
-    position: 'Lead développeur freelance',
+    position: 'Lead développeur fullstack freelance',
     description: `
         Pour LaForge Powerlifting à Montpellier, j’ai travaillé avec le cofondateur dans la création d’une plateforme de coaching qui permettrait aux coaches de la salle et à leurs athlètes d’avoir une solution de coaching plus avancée que de simples fiches Excel. \n
         La plateforme se décline en deux parties : une application web pour les coachs leur offrant une solution ergonomique pour créer et gérer les programmes de leurs athlètes, mais également leurs formules de coaching et les abonnements. La deuxième partie est une application mobile pour les athlètes, leur offrant une interface ergonomique pour effectuer leurs séances et suivre l’avancée de leurs programmes, mais aussi pour gérer leurs abonnements. \n

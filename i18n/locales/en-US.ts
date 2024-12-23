@@ -16,7 +16,7 @@ export default {
   selectedProjects: 'Selected projects',
   seeMore: 'View the project',
   laForge: {
-    position: 'Freelance lead developer',
+    position: 'Freelance fullstack lead developer',
     description: `
         For LaForge Powerlifting in Montpellier, I worked with the co-founder in the creation of a coaching platform that would allow the gym's coaches and their athletes to have a more advanced coaching solution than simple Excel sheets. \n
         The platform is divided into two parts: a web application for coaches offering them an ergonomic solution to create and manage their athletes' programs, but also their coaching packages and subscriptions. The second part is a mobile application for athletes, offering them an ergonomic interface to carry out their sessions and follow the progress of their programs, but also to manage their subscriptions. \n
